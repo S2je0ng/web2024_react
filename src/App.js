@@ -3,7 +3,8 @@ import './App.css';
 import { IoHome } from "react-icons/io5";
 
 import Hello from './01/Hello';
-import MyDiv from './02/MyDiv';
+import CardMain from './03/CardMain';
+// import MyDiv from './02/MyDiv';
 
 
 function App() {
@@ -21,7 +22,8 @@ function App() {
         <div className='w-full grow
                         flex flex-col justify-center items-center'>
           {/* <Hello /> */}
-          <MyDiv />
+          {/* <MyDiv /> */}
+          <CardMain />
         </div>
         <footer className='w-full h-16
                           flex justify-center items-center 
