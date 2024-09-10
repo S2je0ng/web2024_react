@@ -1,15 +1,17 @@
 import { useState, useEffect, useRef } from "react";
 
 export default function BoxOffice() {
+
   //json data 저장변수
   const [tdata, setTdata] = useState([]);
   const [tags, setTags] = useState([]);
   const [selMv, setSelMv] = useState('');
+ 
   const inRef = useRef();
 
   //데이터가져오기
   const getData = () => {
-    let tmDt = inRef.current.value.replaceAll('-','')
+    let tmDt = inRef.current.value.replaceAll('-','') // 입력 받을 값 정리
     let url = 'https://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?';
     url = url + `key=${process.env.REACT_APP_MV}`;
     url = url + `&targetDt=${tmDt}`;
@@ -38,6 +40,8 @@ export default function BoxOffice() {
              <span className="mr-2 text-white">개봉일 : {mv.openDt}</span>
              <span className="mr-2 text-white">
               누적관객수 : {parseInt(mv.audiAcc).toLocaleString()}
+              {/*parseInt(mv.audiAcc)은 mv.audiAcc를 정수로 변환하여 숫자 연산이 가능하도록 함 */}
+              {/*.toLocaleString()은 변환된 정수를 지역화된 형식으로 변환*/}
              </span>
              </>
     setSelMv(tm)

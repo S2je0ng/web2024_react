@@ -16,33 +16,40 @@ export default function Card({ imgSrc, title, content }) {
 
   //특정 상태 변수가 변경 될 때 마다 실행
   useEffect(()=>{
-    console.log(n)
+    console.log(n) // 좋아요수 올라가는 거 확인
   }, [n]);
 
   return (
     <div className="flex justify-center items-top
                     w-full h-50 border border-slate-300
                     p-3">
+
       <div className="w-1/3 h-50 flex 
                       justify-center items-start">
         <img src={imgSrc} />
       </div>
+
       <div className="w-2/3 h-50 flex flex-col
                       ml-5
                       justify-between items-start">
+
         <p className="text-2xl font-bold text-blue-900">
           {title}
         </p>
+
         <p className="text-sm text-slate-600">
           {content}
         </p>
+
         <p className="w-full text-sm text-slate-900 text-right">
           <span className="text-lg font-bold cursor-pointer" onClick={handleClick}> 
             ❤️ 좋아요 
           </span>
           <span className="text-lg font-bold"> {n} </span>
         </p>
+
       </div>
+      
     </div>
   )
 }

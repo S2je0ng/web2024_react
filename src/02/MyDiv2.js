@@ -1,6 +1,6 @@
 import MyDiv3 from './MyDiv3';
 // function MyDiv2(probs) {
-function MyDiv2({d1,d2,d3}) {
+function MyDiv2({d1,d2,d3}) { //중괄호 무조건 사용해야함
 
     return (
         <div className="flex flex-col justify-start items-center
